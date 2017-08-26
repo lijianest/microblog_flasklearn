@@ -20,7 +20,6 @@ def before_request():
         db.session.commit()
 
 
-<<<<<<< HEAD
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
@@ -32,8 +31,6 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -53,10 +50,8 @@ def index():
                            title='Home',
                            user=user,
                            posts=posts)
-<<<<<<< HEAD
-=======
 
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
+
 
 @app.route('/login', methods=['GET', 'POST'])
 @oid.loginhandler
@@ -83,10 +78,7 @@ def after_login(resp):
         nickname = resp.nickname
         if nickname is None or nickname == "":
             nickname = resp.email.split('@')[0]
-<<<<<<< HEAD
         nickname = User.make_unique_nickname(nickname)
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
         user = User(nickname=nickname, email=resp.email)
         db.session.add(user)
         db.session.commit()
@@ -121,10 +113,7 @@ def user(nickname):
     return render_template('user.html',
                            user=user,
                            posts=posts)
-<<<<<<< HEAD
-=======
 
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
 
 @app.route('/edit', methods=['GET', 'POST'])
 @login_required
@@ -141,7 +130,7 @@ def edit():
         form.nickname.data = g.user.nickname
         form.about_me.data = g.user.about_me
     return render_template('edit.html', form=form)
-<<<<<<< HEAD
+
 
 
 @app.route('/follow/<nickname>')
@@ -175,5 +164,4 @@ def unfollow(nickname):
     flash('You have stopped following ' + nickname + '.')
     return redirect(url_for('user', nickname=nickname))
 
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
+
