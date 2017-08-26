@@ -1,7 +1,6 @@
 from hashlib import md5
 from app import db
 
-<<<<<<< HEAD
 
 followers = db.Table(
     'followers',
@@ -9,8 +8,7 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,7 +17,7 @@ class User(db.Model):
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
-<<<<<<< HEAD
+
     followed = db.relationship('User',
                                secondary=followers,
                                primaryjoin=(followers.c.follower_id == id),
@@ -38,8 +36,7 @@ class User(db.Model):
                 break
             version += 1
         return new_nickname
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
+
 
     @property
     def is_authenticated(self):
@@ -63,7 +60,6 @@ class User(db.Model):
         return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % \
             (md5(self.email.encode('utf-8')).hexdigest(), size)
 
-<<<<<<< HEAD
 
     def follow(self, user):
         if not self.is_following(user):
@@ -85,8 +81,7 @@ class User(db.Model):
                 followers.c.follower_id == self.id).order_by(
                     Post.timestamp.desc())
 
-=======
->>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
+
     def __repr__(self):
         return '<User %r>' % (self.nickname)
 
