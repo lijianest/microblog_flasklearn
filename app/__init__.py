@@ -3,8 +3,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_openid import OpenID
+<<<<<<< HEAD
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, \
     MAIL_PASSWORD
+=======
+from config import basedir
+>>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
 
 app = Flask(__name__)
 app.config.from_object('config')

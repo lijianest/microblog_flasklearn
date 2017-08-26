@@ -10,6 +10,7 @@
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}<p><i>Last seen on: {{ user.last_seen }}</i></p>{% endif %}
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {% if user.id == g.user.id %}<p><a href="{{ url_for('edit') }}">Edit</a></p>{% endif %}
 =======
                 <p>{{ user.followers.count() }} followers | 
@@ -22,6 +23,9 @@
                 {% endif %}
                 </p>
 >>>>>>> d9e43baf368540fe4c05f913dab4cd86ec5e1ddd
+=======
+                {% if user.id == g.user.id %}<p><a href="{{ url_for('edit') }}">Edit</a></p>{% endif %}
+>>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
             </td>
         </tr>
     </table>

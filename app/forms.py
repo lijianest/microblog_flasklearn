@@ -1,7 +1,10 @@
 from flask_wtf import Form
 from wtforms import StringField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length
+<<<<<<< HEAD
 from .models import User
+=======
+>>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
 
 
 class LoginForm(Form):
@@ -12,6 +15,7 @@ class LoginForm(Form):
 class EditForm(Form):
     nickname = StringField('nickname', validators=[DataRequired()])
     about_me = TextAreaField('about_me', validators=[Length(min=0, max=140)])
+<<<<<<< HEAD
 
     def __init__(self, original_nickname, *args, **kwargs):
         Form.__init__(self, *args, **kwargs)
@@ -28,3 +32,5 @@ class EditForm(Form):
                                         'Please choose another one.')
             return False
         return True
+=======
+>>>>>>> e10a015fe484357d5540f94d4ba768fe1b7ad166
