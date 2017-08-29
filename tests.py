@@ -44,8 +44,7 @@ class TestCase(unittest.TestCase):
         assert nickname2 != 'john'
         assert nickname2 != nickname
 
-<<<<<<< HEAD
-=======
+
     def test_follow(self):
         u1 = User(nickname='john', email='john@example.com')
         u2 = User(nickname='susan', email='susan@example.com')
@@ -123,7 +122,5 @@ class TestCase(unittest.TestCase):
             assert f3 == [p4, p3]
             assert f4 == [p4]
 
-
->>>>>>> d9e43baf368540fe4c05f913dab4cd86ec5e1ddd
 if __name__ == '__main__':
     unittest.main()
